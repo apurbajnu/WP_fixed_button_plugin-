@@ -8,10 +8,8 @@ Author Uri: http://apblogs.com
 Version: 1.0
 */
 
-
 require_once('class.settings-api.php');
 require_once('main.php');
-
 
 /**
  * WordPress settings API demo class
