@@ -46,13 +46,13 @@ class WP_fixed_button{
 
     public function button_style(){
 
-        $this->css_options_value = get_option('wedevs_basics');
+        $this->css_options_value = get_option('wedevs_advanced');
         var_dump($this->css_options_value);
         ?>
         <style>
 
             .fixed_button {
-                position: absolute;
+                position: fixed;
                 top: 150px;
                 z-index: 1000000;
                 left: -29px;
