@@ -5,6 +5,9 @@ class WP_fixed_button{
 
     private $html_config;
     private $ap_number_of_button=2;
+
+    private $name_button =array("First button", "2nd button");
+    private  $button_name;
     function __construct(){
 
         add_action('wp_head', array($this,'add_button'));
@@ -13,14 +16,17 @@ class WP_fixed_button{
 
     public function add_button(){
 
+
         $this->html_config .= "<div class=\"fixed_button\">";
 
-         for($i = 1; $i<=$this->ap_number_of_button; $i++){
-             $this->html_config .= "<a href=\"#\" class=\"linked\">Button".strval($i)."</a>";
+         for($i = 0; $i<$this->ap_number_of_button; $i++){
+
+             $this->button_name = (($this->name_button[$i])!== null)?$this->name_button[$i]:"Default";
+
+             $this->html_config .= "<a href=\"#\" class=\"linked\">".$this->button_name."</a>";
 
          }
-//	<a href=\"#\" class=\"linked\">Button one</a>
-//	<a href=\"#\" class=\"linked\"> Button two</a>";
+
 
 
         $this->html_config .= "</div>";
